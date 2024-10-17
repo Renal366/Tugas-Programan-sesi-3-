@@ -1,0 +1,19 @@
+const prompt = require(`prompt-sync`)();
+let name = prompt("Input name: ");
+let age = Number(prompt("Input age: "));
+let place_to_live = prompt("Input place to live: ");
+let saving_in_dollars = Number(prompt("Input saving in dollars: $"));
+
+if (age > 40 && place_to_live === "Nevada"|| place_to_live === "New York"|| place_to_live === "Havana" && saving_in_dollars > 10000000){
+  console.log(`${name} is likely a mafia member with Don`);
+
+} else if (age > 25 && place_to_live === "New Jersey"|| place_to_live === "Manhattan"|| place_to_live === "Nevada" && saving_in_dollars > 2000000){
+  console.log(`${name} is likely a mafia member with Underboss`);
+
+} else if (age > 18 && place_to_live === "Californa"|| place_to_live === "Detroit"|| place_to_live === "Boston" && saving_in_dollars < 1000000){
+  console.log(`${name} is likely a mafia member with Capo`);
+
+} else {
+  console.log(`${name} is not suspicious`);
+  
+}
