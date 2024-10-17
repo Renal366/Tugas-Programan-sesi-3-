@@ -1,0 +1,38 @@
+const prompt = require("prompt-sync")();
+
+let case_a = prompt("Was there cyanide powder in the victim's stomach?")
+let case_b = prompt("Was there more than 50 milligrams of cyanide powder in the victim's stomach?")
+let case_c = prompt("Is there CCTV that clearly shows someone putting something into the glass?")
+let case_d = prompt("Is there CCTV that vaguely shows someone putting something into the glass?")
+let case_e = prompt("Are there two or more fingerprints on the glass?")
+let case_f = prompt("Is there any suspicious movement?")
+let case_g = prompt("Was there cyanide powder in the perpetrator's pocket?")
+
+let total_score = 0
+
+if (case_a === "yes"){
+    total_score += 50
+} 
+if (case_b === "yes"){
+    total_score += 500
+}
+if (case_c === "yes"){
+    total_score += 250
+}
+if (case_d === "yes"){
+    total_score += 150
+}
+if (case_e === "yes"){
+    total_score += 100
+}
+if (case_f === "yes"){
+    total_score += 50
+}
+if (case_g === "yes"){
+    total_score += 750
+} 
+if (total_score > 1300 && case_c && case_e){
+    console.log(`Point = ${total_score}, it is certain that it is a murder`);
+} else {
+    console.log(`Point = ${total_score}, it is not proven that it was a murder`);
+}
